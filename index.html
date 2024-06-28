@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /* background-color: #ff0051; */
+        }
+        .contenedor{
+            width: 100%;
+            display: grid;
+            place-items: center;
+        }
+        .contenedor-graph{
+            width: 50%;
+        }
+        .contenedor div{
+            margin-top: 5em;
+            margin-bottom: 5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenedor-graph">
+            <div>
+                <canvas id="myChart"></canvas>
+            </div>
+            <div>
+                <canvas id="myChart2"></canvas>
+            </div>
+            <div>
+                <canvas id="myChart3"></canvas>
+            </div>
+            <div>
+                <canvas id="myChart4"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        const ctx = document.getElementById('myChart');
+        const ctx2 = document.getElementById('myChart2');
+        const ctx3 = document.getElementById('myChart3');
+        const ctx4 = document.getElementById('myChart4');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [20, 50, 3, 15, 22, 3],
+                    borderWidth: 4
+                },{
+                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                    label: '#Votes',
+                    data: [12, 15, 3, 5, 2, 3],
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                // responsive:true,    
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                animation:{
+                    tension:{
+                        durarion:30,
+                        easing:'easeInBack',
+                        from: 1,
+                        to: 0,
+                        loop:true
+                    }
+                },
+                plugins:{
+                    
+                }
+            }
+        });
+
+        new Chart(ctx2, {
+            type: 'polarArea',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                layout:{
+                    padding:50
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Rojo', 'Azul', 'Amarillo', 'Verde', 'Morado', 'Naranja'],
+                datasets: [{
+                    label: 'Votos',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderColor: '#ffd901',
+                    backgroundColor: '#ffd901',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'Votos',
+                    data: [13, 9, 3, 2, 10, 13],
+                    borderColor: '#1e00ff',
+                    backgroundColor: '#1e00ff',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'Votos',
+                    data: [10, 19, 15, 2, 1, 13],
+                    borderColor: '#bebebe',
+                    backgroundColor: '#bebebe',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'Votos',
+                    data: [1, 9, 5, 12, 10, 3],
+                    borderColor: '#ff0051',
+                    backgroundColor: '#ff0051',
+                    borderWidth: 2,
+                    tension:0.2
+                }]
+            },
+            options: {
+                scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+            }
+        });
+        new Chart(ctx4, {
+            type: 'line',
+            data: {
+                labels: ['Rojo', 'Azul', 'Amarillo', 'Verde', 'Morado', 'Naranja'],
+                datasets: [{
+                    label: 'Votos',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderColor: '#ffd901',
+                    backgroundColor: '#ffd901',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'Votos',
+                    data: [13, 9, 3, 2, 10, 13],
+                    borderColor: '#1e00ff',
+                    backgroundColor: '#1e00ff',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'Votos',
+                    data: [10, 19, 15, 2, 1, 13],
+                    borderColor: '#bebebe',
+                    backgroundColor: '#bebebe',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'Votos',
+                    data: [1, 9, 5, 12, 10, 3],
+                    borderColor: '#ff0051',
+                    backgroundColor: '#ff0051',
+                    borderWidth: 2,
+                    tension:0.2
+                }]
+            },
+            options: {
+                scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+            }
+        });
+    </script>
+</body>
+</html>
