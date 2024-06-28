@@ -26,6 +26,57 @@
     </style>
 </head>
 <body>
-    
+    <div class="contenedor">
+        <div class="contenedor-graph">
+            <div>
+                <canvas id="myChart5"></canvas>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+<script>
+    const ctx5 = document.getElementById('myChart5');
+    new Chart(ctx5, {
+            type: 'bar',
+            data: {
+                labels: ['R2022','R2023','R2024'],
+                datasets: [{
+                    label: 'Recibidas',
+                    data: [268,272,120],
+                    borderColor: '#00c600',
+                    backgroundColor: '#00c600',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'ConcluEdu',
+                    data: [267,272,114],
+                    borderColor: '#ffff29',
+                    backgroundColor: '#ffff29',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'ConcluSE',
+                    data: [-267,-271,68],
+                    borderColor: '#ff2f2f',
+                    backgroundColor: '#ff2f2f',
+                    borderWidth: 2,
+                    tension:0.2
+                },{
+                    label: 'Faltantes',
+                    data: [1,0,6],
+                    borderColor: '#a26a51',
+                    backgroundColor: '#a26a51',
+                    borderWidth: 2,
+                    tension:0.2
+                }]
+            },
+            options: {
+                scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+            }
+        });
+</script>
