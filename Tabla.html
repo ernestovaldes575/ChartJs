@@ -8,10 +8,8 @@
         *{
             margin: 0;
             padding: 0;
-            background-color: #bbbbbb   ;
         }
         .contenedor{
-
             width: 100%;
             display: grid;
             place-items: center;
@@ -29,15 +27,16 @@
     <div class="contenedor">
         <div class="contenedor-graph">
             <div>
-                <canvas id="myChart5"></canvas>
+                <canvas id="myChart"></canvas>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
 <script>
-    const ctx5 = document.getElementById('myChart5');
-    new Chart(ctx5, {
+    const ctx = document.getElementById('myChart');
+    new Chart(ctx, {
             type: 'bar',
             data: {
                 labels: ['R2022','R2023','R2024'],
